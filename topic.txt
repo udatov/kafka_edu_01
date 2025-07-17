@@ -1,0 +1,10 @@
+docker compose exec kafka-0 kafka-topics.sh --create --topic maintopic --bootstrap-server kafka-0:9092 --partitions 3 --replication-factor 2
+
+docker compose exec kafka-0 kafka-topics.sh --list --bootstrap-server kafka-0:9092 
+maintopic
+
+docker compose exec kafka-0 kafka-topics.sh --describe --topic maintopic --bootstrap-server kafka-0:9092
+Topic: maintopic        TopicId: J5GiFTxFTIuGk1zVdg7t1w PartitionCount: 3       ReplicationFactor: 2    Configs: 
+        Topic: maintopic        Partition: 0    Leader: 0       Replicas: 0,1   Isr: 0,1
+        Topic: maintopic        Partition: 1    Leader: 1       Replicas: 1,2   Isr: 1,2
+        Topic: maintopic        Partition: 2    Leader: 2       Replicas: 2,0   Isr: 2,0                                                        
